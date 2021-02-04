@@ -2,8 +2,9 @@
   <!-- Nav -->
   <header id="main-header" data-height-onload="80" data-height-loaded="true" data-fixed-height-onload="80" style="top: 0px;box-shadow:0 0 3px #000;border-bottom:1px solid #eee;">
      <div class="container clearfix et_menu_container" style='padding-top:0px;'>
-        <div class="title_container">
-            <h1>GreenChain</h1>
+        <div style='float:left;'>
+            <!-- <h1>GreenChain</h1> -->
+            <img src='img/greenchain2.png' style='height:60px;padding-top:12px;' />
         </div>
 
         <div id="et-top-navigation" data-height="66" data-fixed-height="40">

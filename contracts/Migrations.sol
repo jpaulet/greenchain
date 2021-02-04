@@ -1,23 +1,25 @@
-pragma solidity ^0.5.1;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.7.5;
 
 contract Migrations {
-  address public owner;
-  uint public last_completed_migration;
+    address public owner;
+    // solium-disable-next-line mixedcase
+    uint public last_completed_migration;
 
-  modifier restricted() {
-    if (msg.sender == owner) _;
-  }
+    constructor() public {
+        owner = msg.sender;
+    }
 
-  constructor () public {
-    owner = msg.sender;
-  }
+    modifier restricted() {
+        if (msg.sender == owner) _;
+    }
 
-  function setCompleted(uint completed) public restricted {
-    last_completed_migration = completed;
-  }
+    function setCompleted(uint completed) public restricted {
+        last_completed_migration = completed;
+    }
 
-  function upgrade(address new_address) public restricted {
-    Migrations upgraded = Migrations(new_address);
-    upgraded.setCompleted(last_completed_migration);
-  }
+    // solium-disable-next-line mixedcase
+    function upgrade(address new_address) public restricted {
+        Migrations(new_address).setCompleted(last_completed_migration);
+    }
 }

@@ -1,7 +1,68 @@
 <template>
   <div class="" style='text-align:center;'>
 
-    <Header />
+    <!-- Nav -->
+    <header id="main-header" data-height-onload="80" data-height-loaded="true" data-fixed-height-onload="80" style="top: 0px;box-shadow:0 0 3px #000;border-bottom:1px solid #eee;">
+       <div class="container clearfix et_menu_container" style='padding-top:0px;'>
+          <div style='float:left;'>
+              <!-- <h1>GreenChain</h1> -->
+              <img src='img/greenchain2.png' style='height:60px;padding-top:12px;' />
+          </div>
+
+          <div id="et-top-navigation" data-height="66" data-fixed-height="40">
+             <nav id="top-menu-nav">
+                <ul id="top-menu" class="nav">
+                   <li id="homeLink" class="menu-item current-menu-item current_page_item">
+                      <a href="/" aria-current="page">Home</a>
+                   </li>
+                   <li id="howitWorksLink" class="menu-item">
+                      <a href="how-it-works">How It Works</a>
+                   </li>
+                   <li id="aboutLink" class="menu-item">
+                      <a href="about">About</a>
+                   </li>
+                   <li id="leaderboardLink" class="menu-item">
+                      <a href="leaderboard">Leaderboard</a>
+                   </li>
+                   <li id="contactLink" class="menu-item">
+                      <a href="contact">Contact</a>
+                   </li>
+                   <li>
+                      <button class="btnRoundGreen" style='margin-top:-24px;' @click.prevent="initWallet()">App ></button>
+                   </li>
+                </ul>
+             </nav>
+
+             <div id="et_mobile_nav_menu">
+                <div class="mobile_nav closed">
+                   <span class="select_page">Select Page</span>
+                   <span class="mobile_menu_bar mobile_menu_bar_toggle"></span>
+                   <ul id="mobile_menu" class="et_mobile_menu">
+                      <li class="menu-item current-menu-item page_item current_page_item et_first_mobile_item">
+                          <a href="" aria-current="page">Home</a>
+                      </li>
+                      <li class="menu-item">
+                          <a href="how-it-works">How It Works</a>
+                      </li>
+                      <li class="menu-item">
+                          <a href="about">About</a>
+                      </li>
+                      <li class="menu-item">
+                          <a href="leaderboard">Leaderboard</a>
+                      </li>
+                      <li class="menu-item">
+                          <a href="contact">Contact</a>
+                      </li>
+                      <li>
+                          <a class="et_pb_button et_pb_custom_button_icon et_pb_button_0 et_pb_bg_layout_light" href="app" data-icon=">" @click.prevent="initWallet()">Connect</a>
+                      </li>
+                   </ul>
+                </div>
+             </div>
+          </div>
+       </div>
+    </header>
+    <!-- end Nav -->
 
     <b-container v-if="!walletConnected">
       <h1 class='mt-5 pt-5 mb-5 pb-5'> Greenblock</h1>
@@ -136,7 +197,8 @@
             <header class="selectCard__body-header">
               <h4 class="selectCard__body-header-title">Validator</h4>
               <p class="selectCard__body-header-subtitle mb-3 pb-0">Offset your validator emissions</p>
-              <p class="selectCard__body-header-price" style="/*border-radius:8px;padding:5px;background-color:#64ac5ac9;color:#fff;*/">+5 tCO2 - {{ this.getPack1Price() }}$</p>
+              <!-- border-radius:8px;padding:5px;background-color:#64ac5ac95;color:#fff; -->
+              <p class="selectCard__body-header-price" style="">+5 tCO2 - {{ this.getPack1Price() }}$</p>
             </header>
           </div>
         </label>
@@ -281,7 +343,6 @@
 </template>
 
 <script>
-import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
 
 import Web3 from "web3";
@@ -328,7 +389,6 @@ const web3Modal = new Web3Modal({
 export default {
   name: 'App',
   components: {
-    'Header': Header,
     'Footer': Footer
   },
   data: function() {
@@ -521,12 +581,16 @@ export default {
       var numberOfTokens = 1;
       var tokenPrice = this.convertDollarsToPrice(12);
       const web3 = new Web3(Web3.givenProvider);
-      
-      this.dappTokenSale.methods.buyTokens(numberOfTokens).send({
+      let options = {
         from: this.user.address,
-        value: web3.utils.toWei((numberOfTokens * tokenPrice).toString(), 'ether'),
-        gas: 500000 // Gas limit
-      }).then(function(result){
+        value: web3.utils.toHex(web3.utils.toWei((numberOfTokens * tokenPrice).toString(), 'ether')),
+        gas: web3.utils.toHex(500000) // Gas limit
+        //gasLimit
+        //gasPrice
+        //nonce
+      }
+      
+      this.dappTokenSale.methods.buyTokens(numberOfTokens).send(options).then(function(result){
         console.log("bought tokens!"+ result);
       });
     },

@@ -1,33 +1,35 @@
-pragma solidity ^0.5.1;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.7.5;
 
 // ----------------------------------------------------------------------------
-// 'AIR' 'AirToken' token contract
+// 'OFFS' 'OffsToken' token contract
 //
-// Symbol      : AIR
-// Name        : AirToken
+// Symbol      : OFFS
+// Name        : OffsToken
 // Total supply: 100000000
 // Decimals    : 18
-//
-// 
 //
 // (c) by J.P. Aulet (@jp_aulet) 2020. The MIT Licence.
 // ----------------------------------------------------------------------------
 
-contract DappToken {
-    string  public name = "AirToken";
-    string  public symbol = "AIR";
-    string  public standard = "AIR Token v1.0";
+contract OffsToken {
+    string  public name = "OffsToken";
+    string  public symbol = "OFFS";
+    string  public standard = "OFFS Token v1.0";
     uint8   public decimals = 18;
-    uint256 public totalSupply;
+    uint256 public totalSupply = 100000000;
+    address public owner;
+
+
+    //Balances
+    mapping(address => uint256) public balanceOf;
+    mapping(address => mapping(address => uint256)) public allowance;
+
 
     //Events
     event Transfer(address indexed _from, address indexed _to, uint256 _value);
     event Approval(address indexed _owner, address indexed _spender, uint256 _value);
     event Burn(address indexed from, uint256 value);
-
-    //Balances
-    mapping(address => uint256) public balanceOf;
-    mapping(address => mapping(address => uint256)) public allowance;
 
 
     /**
@@ -35,9 +37,9 @@ contract DappToken {
      *
      * Initializes contract with initial supply tokens to the creator of the contract
      */
-    constructor (uint256 _initialSupply) public {
-        balanceOf[msg.sender] = _initialSupply;
-        totalSupply = _initialSupply;
+    constructor () public {
+        balanceOf[msg.sender] = totalSupply;
+        owner = msg.sender;
     }
 
 
@@ -69,6 +71,19 @@ contract DappToken {
 
 
     /**
+     * @dev See {IERC20-approve}.
+     *
+     * Requirements:
+     *
+     * - `spender` cannot be the zero address.
+     */
+    function approve(address spender, uint256 amount) public virtual returns (bool) {
+        _approve(msg.sender, spender, amount);
+        return true;
+    }
+
+
+    /**
      * Set allowance for other address
      *
      * Allows `_spender` to spend no more than `_value` tokens in your behalf
@@ -76,9 +91,12 @@ contract DappToken {
      * @param _spender The address authorized to spend
      * @param _value the max amount they can spend
      */
-    function approve(address _spender, uint256 _value) public returns (bool success) {
+    function _approve(address _owner, address _spender, uint256 _value) public returns (bool success) {
+        require(_owner != address(0), "ERC20: approve from the zero address");
+        require(_spender != address(0), "ERC20: approve to the zero address");
+
         allowance[msg.sender][_spender] = _value;
-        emit Approval(msg.sender, _spender, _value);
+        emit Approval(_owner, _spender, _value);
         return true;
     }
 
@@ -93,6 +111,8 @@ contract DappToken {
      * @param _value the amount to send
      */
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {
+        require(_from != address(0), "ERC20: approve from the zero address");
+        require(_to != address(0), "ERC20: approve to the zero address");
         require(_value <= balanceOf[_from]);
         require(_value <= allowance[_from][msg.sender]);
 

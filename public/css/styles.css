@@ -1,13 +1,3 @@
-/*
-Colors
-
-Old: #35d764;
-
-News: 
-#AFD04E;
-~86A479
-*/
-
 @font-face {
   font-family: 'Graphik';
   src: url('../fonts/Graphik-Font-Family/GraphikRegular.otf') format('opentype');
@@ -17845,7 +17835,7 @@ body #page-container .et_pb_section .et_pb_button_0{
     font-family:'Graphik';
     font-weight:700!important;
     text-transform:uppercase!important;
-    background-color:#35d764
+    background-color:#00a02f
 }
 body #page-container .et_pb_section .et_pb_button_0:hover:after{
     margin-left:.3em;
@@ -17976,7 +17966,7 @@ body #page-container .et_pb_section .et_pb_button_6:after{
 .et_pb_image_1 .et_pb_image_wrap{
     border-radius:122px 122px 122px 122px;
     overflow:hidden;
-    box-shadow:0px 24px 48px -18px #35d764
+    box-shadow:0px 24px 48px -18px #00a02f
 }
 .et_pb_image_1 .et_pb_image_wrap img{
     height:122px
@@ -18174,7 +18164,7 @@ body #page-container .et_pb_section .et_pb_button_3{
     font-family:'Graphik'!important;
     font-weight:700!important;
     text-transform:uppercase!important;
-    background-color:#35d764
+    background-color:#00a02f
 }
 body #page-container .et_pb_section .et_pb_button_4{
     color:#707070!important;
@@ -18284,7 +18274,7 @@ div.et_pb_section.et_pb_section_3{
     font-weight:700;
     font-size:16px;
     line-height:1.8em;
-    background-color:#35d764;
+    background-color:#00a02f;
     position:relative;
     padding-top:80px!important;
     padding-right:20px!important;
@@ -19168,7 +19158,7 @@ body #page-container .et_pb_section .et_pb_fullwidth_header_0 .et_pb_button_two.
     font-family: 'Graphik';
     font-weight: 700!important;
     text-transform: uppercase!important;
-    background-color: #35d764;
+    background-color: #00a02f;
     padding-top: 8px!important;
     padding-right: 40px!important;
     padding-bottom: 8px!important;
@@ -19176,7 +19166,7 @@ body #page-container .et_pb_section .et_pb_fullwidth_header_0 .et_pb_button_two.
     cursor:pointer;
 }
 .btnRoundGreen:hover{
-    background-color: #00a02f;
+    background-color: #35d764;
     box-shadow:3px 3px 8px #ccc;
 }
 
