@@ -6,7 +6,8 @@
        <div class="container clearfix et_menu_container" style='padding-top:0px;'>
           <div style='float:left;'>
               <!-- <h1>GreenChain</h1> -->
-              <img src='img/greenchain2.png' style='height: 48px; padding-top: 12px;margin-top: 6px;' />
+              <!-- <img src='img/greenchain2.png' style='height: 48px; padding-top: 12px;margin-top: 6px;' /> -->
+              <h1 style='padding-top:22px;font-size:28px;'><strong><span style='color:#00a02f;'>Offs</span>eth</strong></h1>
           </div>
 
           <div id="et-top-navigation" data-height="66" data-fixed-height="40">
@@ -246,7 +247,7 @@
 
       <h3 id='buy' anchor='buy' class='mt-4 pt-5'>¡Act Now!</h3>
       <div class='textLight mt-4 mb-4' style='font-size:16px;padding-left:10px;'> 
-        <strong>{{ this.co2Cost }}$</strong> for every <strong>1 tonne of CO2</strong> offseted. The total cost for offseting 100% of your emissions are <strong>{{ getTotalCost(2) }} $</strong>. Also, you will get <strong>{{ getCO2Tonnes(0) }} AIR</strong> tokens.
+        <strong>{{ this.co2Cost }}$</strong> for every <strong>1 tonne of CO2</strong> offseted. The total cost for offseting 100% of your emissions are <strong>{{ getTotalCost(2) }} $</strong>. Also, you will get <strong>{{ getCO2Tonnes(0) }} OFFS</strong> tokens.
       </div>
 
       <div class="background">
@@ -259,7 +260,7 @@
               <ul class="pricing-features">
                 <li class="pricing-features-item">Offsets 100% of your Blockchain transactions</li>
                 <li class="pricing-features-item">Carbon Neutral</li>
-                <li class="pricing-features-item">Get <strong>{{ getCO2Tonnes() }}</strong> AIR Token</li>
+                <li class="pricing-features-item">Get <strong>{{ getCO2Tonnes() }}</strong> OFFS Token</li>
                 <li v-if="pack1" class="pricing-features-item">+ Validator Pack ({{this.getPack1Price() }} $)</li>
                 <li v-if="pack2" class="pricing-features-item">+ Year Pack ({{this.getPack2Price() }} $)</li>
                 <li v-if="pack3" class="pricing-features-item">+ 100tx Pack ({{this.getPack3Price() }} $)</li>
@@ -276,7 +277,7 @@
               <ul class="pricing-features">
                 <li class="pricing-features-item">Offsets 200% of your Blockchain transactions</li>
                 <li class="pricing-features-item">Carbon Positive</li>
-                <li class="pricing-features-item">Get {{ getTotalCost() / 12 | round(0)}} AIR Token</li>
+                <li class="pricing-features-item">Get {{ getTotalCost() / 12 | round(0)}} OFFS Token</li>
                 <li v-if="pack1" class="pricing-features-item">+ Validator Pack ({{this.getPack1Price() }} $)</li>
                 <li v-if="pack2" class="pricing-features-item">+ Year Pack ({{this.getPack2Price() }} $)</li>
                 <li v-if="pack3" class="pricing-features-item">+ 100tx Pack ({{this.getPack3Price() }} $)</li>                
@@ -293,7 +294,7 @@
               <ul class="pricing-features">
                 <li class="pricing-features-item">Offset more than you consumed on the Blockchain!</li>
                 <li class="pricing-features-item">Carbon Super Positive!</li>
-                <li class="pricing-features-item">Get {{ (this.customCount / this.co2Cost) | round(2) }} AIR tokens</li>
+                <li class="pricing-features-item">Get {{ (this.customCount / this.co2Cost) | round(2) }} OFFS tokens</li>
                 <li v-if="pack1" class="pricing-features-item">+ Validator Pack ({{this.getPack1Price() }} $)</li>
                 <li v-if="pack2" class="pricing-features-item">+ Year Pack ({{this.getPack2Price() }} $)</li>
                 <li v-if="pack3" class="pricing-features-item">+ 100tx Pack ({{this.getPack3Price() }} $)</li>
@@ -335,7 +336,64 @@
             </div>
           </div>
         </div>
-      </div>      
+      </div>
+
+      <br />
+
+      <div>
+        <h3 id='buy' anchor='buy' class='mt-4 pt-5'>Or Diposit in the Pool</h3>
+        <div class='textLight mt-4 mb-4' style='font-size:16px;padding-left:10px;'> 
+          You could <strong>diposit your DAI</strong> in the <u>Offseth Pool</u> (deposits will be stored in AAVE protocol) and withdraw it whenever you want. Meanwhile your DAI (combined with the other participants), will generate interest and it will be used once every month to purchase CO2 tokens.<br /><br />
+
+          All participants <strong>will be rewarded with OFFS tokens</strong> (based on the amount of DAI deposited) that then could be used to multiple purposes (show proof of CO2 offseted, purchase exclusive NTF art & objects, sell them, etc.). 
+        </div>
+      </div> 
+
+      <div class='d-flex justify-content-around mt-5 mb-5 pb-5'>
+        <div class="wrapper-pool mt-3" style='height:350px;width:100%;'>
+          <h5 style='font-size:18px;text-align:center;margin-bottom:50px;'>
+            CO2 DAI Pool <br /><span style='font-size:12px;'>(Round 1 - Aave)</span>
+          </h5>
+
+          <div>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" style="display: none;">
+              <symbol id="wave">
+                <path d="M420,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C514,6.5,518,4.7,528.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H420z"></path>
+                <path d="M420,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C326,6.5,322,4.7,311.5,2.7C304.3,1.4,293.6-0.1,280,0c0,0,0,0,0,0v20H420z"></path>
+                <path d="M140,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C234,6.5,238,4.7,248.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H140z"></path>
+                <path d="M140,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C46,6.5,42,4.7,31.5,2.7C24.3,1.4,13.6-0.1,0,0c0,0,0,0,0,0l0,20H140z"></path>
+              </symbol>
+            </svg>
+            <div class="box">
+              <div class="percent">
+                <p class="percentNum" id="count" style='font-size:14px;text-align:center;margin-bottom:0px;padding-bottom:0px;color:#212529;'>1602 DAI</p>
+                <p class="percentB" style='font-size:11px;text-align:center;'>(12 % APY)</p>
+                <p style='text-align:center;'>{{tonnesOffseted | round(4)}} TCO2</p>
+              </div>
+              <div id="water" class="water">
+                <svg viewBox="0 0 560 20" class="water_wave water_wave_back">
+                  <use xlink:href="#wave"></use>
+                </svg>
+                <svg viewBox="0 0 560 20" class="water_wave water_wave_front">
+                  <use xlink:href="#wave"></use>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="et_pb_button_module_wrapper et_pb_button_5_wrapper et_pb_module mt-3" style='opacity:0.75;transform:scale(0.7);margin:0px auto;width:100%;text-align:center;display:initial;'>
+            <div class="quantity" style='left:36%;'>
+             <input type='number' min='15' :value='numberOfDai' step='15' name='numberOfDai' />
+             <div class="quantity-nav">
+              <div class="quantity-button quantity-up" @click='up()'>+</div>
+              <div class="quantity-button quantity-down" @click='down()'>-</div>
+             </div>
+            </div>
+            <a class="et_pb_button et_pb_custom_button_icon et_pb_button_5 et_pb_button_6 et_pb_bg_layout_light" href="" data-icon=">" @click.prevent="depositDai(numberOfDai)" style='left:36%;'>Diposit</a>
+            <p style='font-size:10px;color:#888;margin-top:8px;'>Minimum deposit of 15 DAI (equivalent to 1 CO2 Tonne)</p>
+          </div>
+        </div>
+      </div>   
 
     </b-container>
 
@@ -353,6 +411,8 @@ import WalletConnectProvider from "@walletconnect/web3-provider";
 import Fortmatic from "fortmatic";
 import Torus from "@toruslabs/torus-embed";
 import { mapState } from 'vuex';
+
+// import Maker from '@makerdao/dai';
 
 const providerOptions = {
   walletconnect: {
@@ -383,7 +443,7 @@ const providerOptions = {
 };
 
 const web3Modal = new Web3Modal({
-  network: "mainnet", // optional
+  network: "ganache", // optional
   cacheProvider: false, // optional
   providerOptions // required
 });
@@ -409,7 +469,11 @@ export default {
       customCount: 0,
       web3Provider: null,
       DappToken: null,
-      DappTokenSale: null      
+      DappTokenSale: null,
+      tonnesOffseted: 12,
+      interval: null,
+      numberOfDai: 15,
+      maker: null,      
     }
   },
   computed: {
@@ -434,8 +498,20 @@ export default {
         this.initContracts();
       }
     });
+    this.interval = setInterval(() => {
+      this.tonnesOffseted += 0.0001;
+    }, 1000);
   },
   methods: {
+    up(){
+      this.numberOfDai += 15;
+    },
+    down(){
+      this.numberOfDai -= 15;
+      if(this.numberOfDai < 15){
+        this.numberOfDai = 15;
+      }
+    },
     async initWallet(){
       const provider = await web3Modal.connect();
       const web3 = new Web3(provider);
@@ -580,15 +656,40 @@ export default {
     },
 
     buyTokens(_numOfTokens){
+      /*
       var numberOfTokens = _numOfTokens;
       var tokenPrice = this.convertDollarsToPrice(this.co2Cost);
+      let inEth = numberOfTokens * tokenPrice;
 
-      console.log("Num of tokens: "+numberOfTokens);
-      console.log("TokenPrice:"+tokenPrice);
-      console.log("Multi: "+ (numberOfTokens * tokenPrice));
-      console.log("Multi to string: "+ (numberOfTokens * tokenPrice).toString());
-      console.log("Value: "+web3.utils.toWei((numberOfTokens * tokenPrice).toString()));
+      //this.initContracts();
 
+      const web3 = new Web3(Web3.givenProvider);
+      let theValue = web3.utils.toWei(inEth.toString(), 'ether');
+      console.log("THE value: "+theValue);
+
+      let options = {
+        from: this.user.address,
+        value: theValue,
+        gas: 500000, // Gas limit
+        gasPrice: '20000000000'
+        //nonce
+      }
+
+      console.log(options);
+      
+      console.log("Buy Tokens...");
+      this.dappTokenSale.methods.buyTokens(numberOfTokens).send(options).then(function(result){
+        console.log("Inside result..");
+        console.log(result);
+        //console.log("bought tokens!"+ result);
+      });
+
+      console.log("FINISH!");
+      */
+      
+      var numberOfTokens = parseInt(_numOfTokens)+1;
+      var tokenPrice = this.convertDollarsToPrice(13);
+      
       const web3 = new Web3(Web3.givenProvider);
       let options = {
         from: this.user.address,
@@ -602,6 +703,121 @@ export default {
       this.dappTokenSale.methods.buyTokens(numberOfTokens).send(options).then(function(result){
         console.log("bought tokens!"+ result);
       });
+    },
+
+    async depositDai(amount){
+      /*
+      const maker = Maker.create('test');
+      await maker.authenticate();
+
+      const dai = maker.service('token').getToken('DAI');
+      return dai.transfer(this.user.address, amount);
+      */
+      console.log("Amount: "+amount);
+
+      const web3 = new Web3(Web3.givenProvider);
+      const fromAddress = this.user.address;
+      const expiry = Date.now() + 120;
+      const nonce = 1;
+      const spender = "0xE1B48CddD97Fa4b2F960Ca52A66CeF8f1f8A58A5";
+      const createPermitMessageData = function () {
+        const message = {
+          holder: fromAddress,
+          spender: spender,
+          nonce: nonce,
+          expiry: expiry,
+          allowed: true,
+        };
+
+        const typedData = JSON.stringify({
+          types: {
+            EIP712Domain: [
+              {
+                name: "name",
+                type: "string",
+              },
+              {
+                name: "version",
+                type: "string",
+              },
+              {
+                name: "chainId",
+                type: "uint256",
+              },
+              {
+                name: "verifyingContract",
+                type: "address",
+              },
+            ],
+            Permit: [
+              {
+                name: "holder",
+                type: "address",
+              },
+              {
+                name: "spender",
+                type: "address",
+              },
+              {
+                name: "nonce",
+                type: "uint256",
+              },
+              {
+                name: "expiry",
+                type: "uint256",
+              },
+              {
+                name: "allowed",
+                type: "bool",
+              },
+            ],
+          },
+          primaryType: "Permit",
+          domain: {
+            name: "Dai Stablecoin",
+            version: "1",
+            chainId: 42,
+            verifyingContract: "0x4F96Fe3b7A6Cf9725f59d353F723c1bDb64CA6Aa",
+          },
+          message: message,
+        });
+
+        return {
+          typedData,
+          message,
+        };
+      };
+
+      const signData = async function (web3, fromAddress, typeData) {
+        return new Promise(function (resolve, reject) {
+          web3.currentProvider.sendAsync(
+            {
+              id: 1,
+              method: "eth_signTypedData_v3",
+              params: [fromAddress, typeData],
+              from: fromAddress,
+            },
+            function (err, result) {
+              if (err) {
+                reject(err); //TODO
+              } else {
+                const r = result.result.slice(0, 66);
+                const s = "0x" + result.result.slice(66, 130);
+                const v = Number("0x" + result.result.slice(130, 132));
+                resolve({
+                  v,
+                  r,
+                  s,
+                });
+              }
+            }
+          );
+        });
+      };
+
+      const messageData = createPermitMessageData();
+      const sig = await signData(web3, fromAddress, messageData.typedData);
+      return Object.assign({}, sig, messageData.message);
     },
 
     // Listen for events emitted from the contract
@@ -758,5 +974,156 @@ export default {
 }
 .collapse:not(.show) {
     display: none !important;
+}
+
+/* Water filler */
+
+.box {
+  height: 200px;
+  width: 200px;  
+  transform: translate(-50%, -50%);
+  border-radius: 100%;
+  overflow: hidden;
+  position: relative;
+  top: 80px;
+  left: 50%;
+  box-shadow: 3px 3px 6px #3cb45f33;
+  border: 1px solid #039b2f63;
+}
+.box .percent {
+  position: absolute;
+  left: 0;
+  top: 20px;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+  font-size: 20px;
+}
+.box .water {
+  position: absolute;
+  left: 0;
+  top: -50px;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  transform: translate(0, 100%);
+  background: #3cb45f;
+  transition: all 0.3s;
+}
+.box .water_wave {
+  width: 200%;
+  position: absolute;
+  bottom: 100%;
+}
+.box .water_wave_back {
+  right: 0;
+  fill: #8eb98a;
+  -webkit-animation: wave-back 2.8s infinite linear;
+          animation: wave-back 2.8s infinite linear;
+}
+.box .water_wave_front {
+  left: 0;
+  fill: #3cb45f;
+  margin-bottom: -1px;
+  -webkit-animation: wave-front 1.4s infinite linear;
+          animation: wave-front 1.4s infinite linear;
+}
+
+@-webkit-keyframes wave-front {
+  100% {
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes wave-front {
+  100% {
+    transform: translate(-50%, 0);
+  }
+}
+@-webkit-keyframes wave-back {
+  100% {
+    transform: translate(50%, 0);
+  }
+}
+@keyframes wave-back {
+  100% {
+    transform: translate(50%, 0);
+  }
+}
+
+/* QUANTITY */
+.quantity {
+  position: relative;
+  width: 120px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button
+{
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number]
+{
+  -moz-appearance: textfield;
+}
+
+.quantity input {
+  width: 120px;
+  height: 68px;
+  line-height: 1.65;
+  float: left;
+  display: block;
+  padding: 0;
+  margin: 0;
+  padding-left: 20px;
+  border: 1px solid #eee;
+}
+
+.quantity input:focus {
+  outline: 0;
+}
+
+.quantity-nav {
+  float: left;
+  position: relative;
+  height: 66px;
+}
+
+.quantity-button {
+  position: relative;
+  cursor: pointer;
+  border-left: 1px solid #eee;
+  width: 20px;
+  text-align: center;
+  color: #333;
+  font-size: 13px;
+  font-family: "Trebuchet MS", Helvetica, sans-serif !important;
+  line-height: 2.4;
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.quantity-button.quantity-up {
+  position: absolute;
+  height: 50%;
+  top: 0;
+  border-bottom: 1px solid #eee;
+}
+
+.quantity-button.quantity-down {
+  position: absolute;
+  bottom: -1px;
+  height: 50%;
 }
 </style>

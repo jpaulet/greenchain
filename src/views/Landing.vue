@@ -6,7 +6,8 @@
         <div class="container clearfix et_menu_container" style='padding-top:0px;'>
            <div style='float:left;'>
                <!-- <h1>GreenChain</h1> -->
-               <img src='img/greenchain2.png' style='height: 48px; padding-top: 12px;margin-top: 6px;' />
+               <!-- <img src='img/greenchain2.png' style='height: 48px; padding-top: 12px;margin-top: 6px;' /> -->
+               <h1 style='padding-top:22px;font-size:28px;'><strong><span style='color:#00a02f;'>Offs</span>eth</strong></h1>
            </div>
 
            <div id="et-top-navigation" data-height="66" data-fixed-height="40">
@@ -71,7 +72,7 @@
          <div class="et_pb_column et_pb_column_1_2 et_pb_column_0  blend_mode">
             <div class="et_pb_module et_pb_text et_pb_text_0  et_pb_text_align_left et_pb_bg_layout_light">
                <div class="et_pb_text_inner">
-                  <h1 style='font-size:3.3em;'> There’s no <strong>Blockchain</strong> without our <span style="color: #00a02f;font-weight:600;">Planet</span></h1>
+                  <h1 style='font-size:3.3em;margin-top:-25px;'> There’s no <strong>Blockchain</strong> without our <span style="color: #00a02f;font-weight:600;">Planet</span></h1>
                   <p style='font-size:1.3em;margin-top:20px;'>Our mission is making Ethereum Blockchain <span style="color: #00a02f;font-weight:600;">sustainable</span> for a greener future by offsetting their CO2 emissions.
                   </p>
                </div>
@@ -369,7 +370,7 @@
             <div class="et_pb_module et_pb_text et_pb_text_9  et_pb_text_align_center et_pb_bg_layout_light">
                <div class="et_pb_text_inner">
                   <h2>Ready to Make Blockchain more Sustainable?</h2>
-                  <p style='font-size:22px;margin-top:30px;'><strong>Only 5%</strong> of Ethereum enegy comes from <strong>renovable energy</strong>. We could make it better by <strong>offsetting</strong> our consumtion!
+                  <p style='font-size:22px;margin-top:30px;'><strong>Only 5%</strong> of Ethereum enegy comes from <strong>renewable energy</strong>. We could make it better by <strong>offsetting</strong> our consumtion!
                   </p>
                </div>
             </div>
@@ -531,7 +532,7 @@ export default {
   },
   data: function() {
     return {
-      tonnesOffseted: 0,
+      tonnesOffseted: 12,
       interval: null
     }
   },

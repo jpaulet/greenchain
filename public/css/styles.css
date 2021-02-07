@@ -17957,11 +17957,14 @@ body #page-container .et_pb_section .et_pb_button_6:after{
 .et_pb_image_0{
     background-image:linear-gradient(180deg,rgba(16,40,65,0) 45%,#102841 100%),url('../img/green-energy-15.jpg');
     padding-bottom:100%;
-    margin-top:-30px!important;
+    margin-top:-50px!important;
     margin-right:-13.8vw!important;
     text-align:left;
     margin-left:0;
     margin-left:50px;
+    height: 680px;
+    border-radius: 25px;
+    box-shadow: 3px 3px 8px #888;
 }
 .et_pb_image_1 .et_pb_image_wrap{
     border-radius:122px 122px 122px 122px;

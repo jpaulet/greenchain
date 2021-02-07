@@ -6,7 +6,8 @@
        <div class="container clearfix et_menu_container" style='padding-top:0px;'>
           <div style='float:left;'>
               <!-- <h1>GreenChain</h1> -->
-              <img src='img/greenchain2.png' style='height: 48px; padding-top: 12px;margin-top: 6px;' />
+              <!-- <img src='img/greenchain2.png' style='height: 48px; padding-top: 12px;margin-top: 6px;' /> -->
+              <h1 style='padding-top:22px;font-size:28px;'><strong><span style='color:#00a02f;'>Offs</span>eth</strong></h1>
           </div>
 
           <div id="et-top-navigation" data-height="66" data-fixed-height="40">
@@ -101,6 +102,10 @@
                 </span>
             </div>                
          </div>
+      </div>
+
+      <div style='text-align:center;margin-bottom:50px;'>
+        <img src='img/flow.png' />
       </div>
 
       <div class='text-center text-danger mt-5'>
