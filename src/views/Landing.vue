@@ -6,7 +6,7 @@
         <div class="container clearfix et_menu_container" style='padding-top:0px;'>
            <div style='float:left;'>
                <!-- <h1>GreenChain</h1> -->
-               <img src='img/greenchain2.png' style='height:60px;padding-top:12px;' />
+               <img src='img/greenchain2.png' style='height: 48px; padding-top: 12px;margin-top: 6px;' />
            </div>
 
            <div id="et-top-navigation" data-height="66" data-fixed-height="40">
@@ -89,6 +89,7 @@
          </div>
       </div>
 
+      <!--
       <div class="et_pb_row et_pb_row_1" style='display:none;'>
          <div class="et_pb_column et_pb_column_1_2 et_pb_column_2  blend_mode">
             <div class="et_pb_module et_pb_text et_pb_text_1  et_pb_text_align_left">
@@ -111,6 +112,7 @@
             </div>
          </div>
       </div>
+      -->
    
        <div class="et_pb_section et_pb_section_1 et_pb_fullwidth_section et_section_regular" style='position:absolute;top:0px;'>
           <div class="et_pb_module et_pb_fullwidth_image et_pb_fullwidth_image_0">
@@ -119,7 +121,79 @@
        </div>
    </div>
 
-   <div id='section2' class="et_pb_section et_pb_section_2 et_pb_with_background et_section_regular" style=''>
+   <div id='section0' class="et_pb_section et_pb_section_0 et_section_regular mt-5" style='min-height:550px;background-color:#f2f2f2;box-shadow:3px 0px 12px #ddd;'>
+      <h3 style='text-align:center;margin-top:-20px;'>Stats</h3>
+      <div class="et_pb_row et_pb_row_2">
+        <div class="wrapper">
+          <h5 style='font-size:18px;text-align:center;margin-bottom:50px;'>
+            CO2 Tonnes Offseted <br /><span style='font-size:12px;'>(OFFS Token)</span>
+          </h5>
+          <div class="progressbar-wrapper" style='margin-top:60px;'>
+              <div class="progressbar">
+                  <span style='margin-top:-70px;position:absolute;'>
+                    12 Tonnes
+                  </span>
+                  <span style='margin-top:-50px;position:absolute;font-size:12px;'>
+                    0.001%
+                  </span>
+                  <div class="side front">
+                      <div class="bar"></div>
+                  </div>
+                  <div class="side back">
+                      <div class="bar"></div>
+                  </div>
+                  <div class="side top">
+                      <div class="bar"></div>
+                  </div>
+                  <div class="side bottom">
+                      <div class="bar"></div>
+                  </div>
+                  <div class="side left"></div>
+              </div>
+          </div>
+          <div class="et_pb_button_module_wrapper et_pb_button_0_wrapper  et_pb_module" style='position:absolute;bottom:-80px;left:200px;opacity:0.75;transform:scale(0.7);'>
+             <a class="et_pb_button et_pb_custom_button_icon et_pb_button_0 et_pb_bg_layout_light" href="" data-icon=">" @click.prevent="initWallet()">Purchase</a>
+          </div>
+        </div>
+        <div class="wrapper-right" style='width:50%;right:0;position:absolute;'>
+          <h5 style='font-size:18px;text-align:center;margin-bottom:50px;'>
+            CO2 DAI Pool <br /><span style='font-size:12px;'>(Round 1 - Aave)</span>
+          </h5>
+
+          <div>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" style="display: none;">
+              <symbol id="wave">
+                <path d="M420,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C514,6.5,518,4.7,528.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H420z"></path>
+                <path d="M420,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C326,6.5,322,4.7,311.5,2.7C304.3,1.4,293.6-0.1,280,0c0,0,0,0,0,0v20H420z"></path>
+                <path d="M140,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C234,6.5,238,4.7,248.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H140z"></path>
+                <path d="M140,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C46,6.5,42,4.7,31.5,2.7C24.3,1.4,13.6-0.1,0,0c0,0,0,0,0,0l0,20H140z"></path>
+              </symbol>
+            </svg>
+            <div class="box">
+              <div class="percent">
+                <p class="percentNum" id="count" style='font-size:14px;text-align:center;margin-bottom:0px;padding-bottom:0px;color:#212529;'>1602 DAI</p>
+                <p class="percentB" style='font-size:11px;text-align:center;'>(12 % APY)</p>
+                <p style='text-align:center;'>{{tonnesOffseted | round(4)}} TCO2</p>
+              </div>
+              <div id="water" class="water">
+                <svg viewBox="0 0 560 20" class="water_wave water_wave_back">
+                  <use xlink:href="#wave"></use>
+                </svg>
+                <svg viewBox="0 0 560 20" class="water_wave water_wave_front">
+                  <use xlink:href="#wave"></use>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="et_pb_button_module_wrapper et_pb_button_5_wrapper  et_pb_module" style='position:absolute;bottom:-80px;left:200px;opacity:0.75;transform:scale(0.7);'>
+             <a class="et_pb_button et_pb_custom_button_icon et_pb_button_5 et_pb_button_6 et_pb_bg_layout_light" href="" data-icon=">" @click.prevent="initWallet()">Diposit</a>
+          </div>
+        </div>
+      </div>
+   </div>
+
+   <div id='section2' class="et_pb_section et_pb_section_2 et_pb_with_background et_section_regular mt-5">
       <div class="et_pb_row et_pb_row_2">
          <div class="et_pb_column et_pb_column_1_3 et_pb_column_4  blend_mode et_pb_column_empty"></div>
          <div class="et_pb_column et_pb_column_2_3 et_pb_column_5  blend_mode et-last-child">
@@ -155,7 +229,7 @@
          <div class="et_pb_column et_pb_column_1_2 et_pb_column_8  blend_mode">
             <div class="et_pb_module et_pb_text et_pb_text_4  et_pb_text_align_left et_pb_bg_layout_light">
                <div class="et_pb_text_inner">
-                  <p style='text-align:left;font-size:26px;padding:10px 20px 0px;'>With GreenChain you can <strong>offset your emissions of CO2 generated by the Ethereum</strong> Blockchain in a easy and simple way! <br /><br />And you will get <strong>AIR Tokens.</strong></p>
+                  <p style='text-align:left;font-size:26px;padding:10px 20px 0px;'>With GreenChain you can <strong>offset your emissions of CO2 generated by the Ethereum</strong> Blockchain in a easy and simple way! <br /><br />And you will get <strong>OFFS Tokens.</strong></p>
                </div>
             </div>
             <div class="et_pb_button_module_wrapper et_pb_button_3_wrapper  et_pb_module" style='text-align:center;margin-top:30px;'>
@@ -177,6 +251,7 @@
       </div>
    </div>
 
+   <!--
    <div id='section3' class="et_pb_section et_pb_section_3 et_pb_with_background et_section_specialty">
       <div class="et_pb_row" style='display: flex;align-items: center;justify-content: center;'>
          <div class="et_pb_column et_pb_column_2_3 et_pb_column_11   et_pb_specialty_column  blend_mode">
@@ -222,6 +297,7 @@
          </div>
       </div>
    </div>
+   -->
 
    <div id='section4' class="et_pb_section et_pb_section_4 et_section_regular et_pb_section_sticky et_pb_section_sticky_mobile">
       <div class="et_pb_row et_pb_row_5">
@@ -352,9 +428,9 @@
                      <div class="et_pb_blurb_content">
                         <div class="et_pb_main_blurb_image"><span class="et_pb_image_wrap"><img loading="lazy" src="img/green-energy-icon-3-1.png" alt="" class="et-waypoint et_pb_animation_top wp-image-221967" width="64" height="64"></span></div>
                         <div class="et_pb_blurb_container">
-                           <h4 class="et_pb_module_header"><span>Earn & Use AIR Tokens</span></h4>
+                           <h4 class="et_pb_module_header"><span>Earn & Use OFFS Tokens</span></h4>
                            <div class="et_pb_blurb_description">
-                              <p style='font-size:15px;'>For each tonne of CO2 you will get 1 AIR token.</p>
+                              <p style='font-size:15px;'><strong>1 tonne</strong> of CO2 equals to <strong>1 OFFS</strong> token</p>
                            </div>
                         </div>
                      </div>
@@ -369,11 +445,14 @@
                </div>
             </div>
          </div>
-         <div class="et_pb_column et_pb_column_1_2 et_pb_column_22    blend_mode et_pb_column_single">
+         <div class="et_pb_column et_pb_column_1_2 et_pb_column_22 blend_mode et_pb_column_single">
             <div class="et_pb_module et_pb_text et_pb_text_11  et_pb_text_align_center et_pb_bg_layout_light">
                <div class="et_pb_text_inner">
                   <h2>What You Get</h2>
-                  <p>Nulla quis lorem ut libero malesuada feugiat.</p>
+                  <p style='text-align: justify;font-size:14px;padding:0px 20px;'>
+                    <strong>OFFS is a token pegged to 1 Tonne of CO2.</strong>
+                    <br /><br />For each 1 OFFS emmited it represents a sustraction equivalent to 1 Tonne of CO2. This way, you could contribute fighting climate emergency, help restoring forest and protect different species.
+                  </p>
                </div>
             </div>
             <div class="et_pb_module et_pb_image et_pb_image_8">
@@ -399,7 +478,6 @@
    </div>
 
    <Footer />
-
  </div>
 </template>
 
@@ -452,7 +530,10 @@ export default {
     'Footer': Footer
   },
   data: function() {
-    return {}
+    return {
+      tonnesOffseted: 0,
+      interval: null
+    }
   },
   methods: {
     async initWallet(){
@@ -473,6 +554,145 @@ export default {
       //Redirect
       this.$router.push({name: 'app', params: null});
     }
-  }
+  },
+  mounted () {
+    this.interval = setInterval(() => {
+      this.tonnesOffseted += 0.0001;
+    }, 1000);
+  },
 }
 </script>
+  
+<style>
+.wrapper {
+    width: 50%;
+    min-height: 300px;
+    position: absolute;
+    display: block;
+}
+.progressbar-wrapper {
+    width: 300px;
+    height: 60px;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+.progressbar {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transform: rotateX(-20deg) rotateY(-30deg);
+}
+.side {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(254, 254, 254, 0.3);
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+.bottom {
+    box-shadow: 10px 10px 50px 5px rgba(90, 90, 90, 0.7);
+    transform: rotateX(90deg);
+    transform-origin: bottom;
+}
+.top {
+    transform: translate(0, -100%) rotateX(90deg);
+    transform-origin: bottom;
+}
+.back {
+    transform: translateZ(-60px);
+}
+.left {
+    width: 60px;
+    transform: rotateY(90deg);
+    transform-origin: left;
+    background-color: rgb(0, 160, 47);
+}
+.bar {
+    height:100%;
+    background-color: rgb(0, 160, 47);
+    box-shadow: 5px 5px 50px 5px rgba(6, 164, 23, 0.14);
+    width:1%;
+}
+
+/* Water filler */
+
+.box {
+  height: 200px;
+  width: 200px;  
+  transform: translate(-50%, -50%);
+  border-radius: 100%;
+  overflow: hidden;
+  position: relative;
+  top: 80px;
+  left: 50%;
+  box-shadow: 3px 3px 6px #3cb45f33;
+  border: 1px solid #039b2f63;
+}
+.box .percent {
+  position: absolute;
+  left: 0;
+  top: 20px;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+  font-size: 20px;
+}
+.box .water {
+  position: absolute;
+  left: 0;
+  top: -50px;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  transform: translate(0, 100%);
+  background: #3cb45f;
+  transition: all 0.3s;
+}
+.box .water_wave {
+  width: 200%;
+  position: absolute;
+  bottom: 100%;
+}
+.box .water_wave_back {
+  right: 0;
+  fill: #8eb98a;
+  -webkit-animation: wave-back 2.8s infinite linear;
+          animation: wave-back 2.8s infinite linear;
+}
+.box .water_wave_front {
+  left: 0;
+  fill: #3cb45f;
+  margin-bottom: -1px;
+  -webkit-animation: wave-front 1.4s infinite linear;
+          animation: wave-front 1.4s infinite linear;
+}
+
+@-webkit-keyframes wave-front {
+  100% {
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes wave-front {
+  100% {
+    transform: translate(-50%, 0);
+  }
+}
+@-webkit-keyframes wave-back {
+  100% {
+    transform: translate(50%, 0);
+  }
+}
+@keyframes wave-back {
+  100% {
+    transform: translate(50%, 0);
+  }
+}
+</styles>

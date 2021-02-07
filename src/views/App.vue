@@ -6,14 +6,14 @@
        <div class="container clearfix et_menu_container" style='padding-top:0px;'>
           <div style='float:left;'>
               <!-- <h1>GreenChain</h1> -->
-              <img src='img/greenchain2.png' style='height:60px;padding-top:12px;' />
+              <img src='img/greenchain2.png' style='height: 48px; padding-top: 12px;margin-top: 6px;' />
           </div>
 
           <div id="et-top-navigation" data-height="66" data-fixed-height="40">
              <nav id="top-menu-nav">
                 <ul id="top-menu" class="nav">
-                   <li id="homeLink" class="menu-item current-menu-item current_page_item">
-                      <a href="/" aria-current="page">Home</a>
+                   <li id="homeLink" class="menu-item">
+                      <a href="/">Home</a>
                    </li>
                    <li id="howitWorksLink" class="menu-item">
                       <a href="how-it-works">How It Works</a>
@@ -38,8 +38,8 @@
                    <span class="select_page">Select Page</span>
                    <span class="mobile_menu_bar mobile_menu_bar_toggle"></span>
                    <ul id="mobile_menu" class="et_mobile_menu">
-                      <li class="menu-item current-menu-item page_item current_page_item et_first_mobile_item">
-                          <a href="" aria-current="page">Home</a>
+                      <li class="menu-item">
+                          <a href="/">Home</a>
                       </li>
                       <li class="menu-item">
                           <a href="how-it-works">How It Works</a>
@@ -71,7 +71,7 @@
 
 
     <b-container v-if='walletConnected'>
-      <div class='panel pricing-table pt-4 pb-4'>
+      <div class='panel pricing-table pt-4 pb-4' style='flex-direction:row !important;'>
         <div class='col-3 textLight' style='border-right:1px solid #eee;'>
           <strong style='color:#666;'>Your Balance:</strong>
           <br />
@@ -166,14 +166,16 @@
           <div class="col-12 text-left" style='text-transform: none !important;'>
             <p class="text-left mb-0" style='text-transform:none !important;'>Washing Machine Load ({{ getLaundry }} laundries):</p>
             <span class="" v-for="index in getLaundry" :key="index">
-              <img src="https://cdn2.iconfinder.com/data/icons/apartement-and-hotel-element/100/LAUNDRY-512.png" style='width:32px;height:32px;' />
+              <img src="https://cdn2.iconfinder.com/data/icons/apartement-and-hotel-element/100/LAUNDRY-512.png" style='width:24px;height:24px;' />
             </span>
+            <p style='text-align:center;font-size:12px;'>OR</p>
 
             <p class="text-left mt-4" style='text-transform:none !important;'>Charge Electric car: <strong>{{ getCar * 100 }} miles</strong></p>
+            <p style='text-align:center;font-size:12px;'>OR</p>
             
             <p class="text-left" style='text-transform:none !important;'>Laptop: {{ getLaptop }}h. or <strong>{{ getLaptopDays }} complete days</strong> or <strong>{{ getLaptopDays / 365 | round(0) }} year/s</strong>:</p>
             <span class="" v-for="index in getLaptopDays" :key="'i' + index">
-              <img src="https://www.iconarchive.com/download/i91777/icons8/windows-8/Time-Plus-1day.ico" style='width:32px;height:32px;padding:3px;opacity:0.5;' />
+              <img src="https://www.iconarchive.com/download/i91777/icons8/windows-8/Time-Plus-1day.ico" style='width:24px;height:24px;padding:2px;opacity:0.5;' />
             </span>
           </div>
         </div>
@@ -264,7 +266,7 @@
               </ul>
               <span class="pricing-price">{{ getTotalCost(2) }}$</span>
               <span class='ml-3 mr-3 ethPrice'> {{ convertDollarsToPrice(getTotalCost()) | round(5) }} eth</span>
-              <a href="#/" class="pricing-button col-12" @click='buyTokens()'>Buy</a>
+              <a href="#/" class="pricing-button col-12" @click='buyTokens(getCO2Tonnes())'>Buy</a>
               <span class='text-danger ethPrice' v-if="!hasEnoughtEth(getTotalCost())"> You don't have enought ETH in your wallet</span>
             </div>
             
@@ -281,7 +283,7 @@
               </ul>
               <span class="pricing-price">{{ getTotalCost(2) * 2}}$</span>
               <span class='ml-3 mr-3 ethPrice'> {{ convertDollarsToPrice(getTotalCost() * 2) | round(5) }} eth</span>
-              <a href="#/" class="pricing-button is-featured col-12" @click='buyTokens()'>Buy</a>
+              <a href="#/" class="pricing-button is-featured col-12" @click='buyTokens( getTotalCost() / 12)'>Buy</a>
               <span class='text-danger ethPrice' v-if="!hasEnoughtEth(getTotalCost()*2)"> You don't have enought ETH in your wallet</span>
             </div>
             
@@ -304,7 +306,7 @@
               <span class="">
                 <span class='ml-3 mr-3 ethPrice'> {{ convertDollarsToPrice(this.customCount) | round(5) }} eth</span>
               </span>
-              <a href="#/" class="pricing-button col-12" @click='buyTokens()'>Buy</a>
+              <a href="#/" class="pricing-button col-12" @click='buyTokens((customCount/co2Cost))'>Buy</a>
               <span class='text-danger ethPrice' v-if="!hasEnoughtEth(this.customCount)"> You don't have enought ETH in your wallet</span>
             </div>
             
@@ -401,7 +403,7 @@ export default {
       infuraId: "3a4e7138de7b4b57989e22af1a8f5649",
       tokenCost: 1000000000000000,
       kWh: 30,
-      co2Cost: 12,
+      co2Cost: 15,
       co2Kg: 0.707,
       fee: 15,
       customCount: 0,
@@ -577,9 +579,16 @@ export default {
       this.dappTokenSale.setProvider(Web3.givenProvider);
     },
 
-    buyTokens(){
-      var numberOfTokens = 1;
-      var tokenPrice = this.convertDollarsToPrice(12);
+    buyTokens(_numOfTokens){
+      var numberOfTokens = _numOfTokens;
+      var tokenPrice = this.convertDollarsToPrice(this.co2Cost);
+
+      console.log("Num of tokens: "+numberOfTokens);
+      console.log("TokenPrice:"+tokenPrice);
+      console.log("Multi: "+ (numberOfTokens * tokenPrice));
+      console.log("Multi to string: "+ (numberOfTokens * tokenPrice).toString());
+      console.log("Value: "+web3.utils.toWei((numberOfTokens * tokenPrice).toString()));
+
       const web3 = new Web3(Web3.givenProvider);
       let options = {
         from: this.user.address,
